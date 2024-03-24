@@ -1,0 +1,419 @@
+/* VARIABLES */
+:root {
+    --margin: 7px;
+    
+    --gradient-main: linear-gradient(45deg, #990000, #ff0080) no-repeat;
+
+    --header-background: var(--gradient-main);
+    --footer-background: var(--gradient-main);
+
+    --header-height: 72px;
+    --navbar-width: var(--header-height);
+    --navbar-icon-size: 24px;
+    --border-radius: 5px;
+    --footer-height: 40px;
+    --background: url('../Images/background/saber.jpg');
+    --background: #fff;
+    --background-overlay: rgba(0,0,0,0.65);
+    /* --background-overlay: #fff; */
+    --title-name-color: linear-gradient(0deg, #000, #666) no-repeat;
+
+
+    --icon-light-home: url('../Images/icons/light/home.png');
+    --icon-light-bookmarks: url('../Images/icons/light/bookmarks.png');
+    --icon-light-projects: url('../Images/icons/light/projects.png');
+    --icon-light-about-me: url('../Images/icons/light/info.png');
+    --icon-light-settings: url('../Images/icons/light/settings.png');
+    --icon-dark-home: url('../Images/icons/dark/home.png');
+    --icon-dark-bookmarks: url('../Images/icons/dark/bookmarks.png');
+    --icon-dark-projects: url('../Images/icons/dark/projects.png');
+    --icon-dark-about-me: url('../Images/icons/dark/info.png');
+    --icon-dark-settings: url('../Images/icons/dark/settings.png');
+
+    --settings-popup-width: 400px;
+    --settings-popup-height: 500px;
+    --settings-popup-shadow-effect: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --settings-popup-background: rgba(255,255,255,0.2);
+    --settings-popup-backdrop-filter: blur(10px);
+    --settings-toggle-size: 64px;
+    --settings-toggle-aspect-ratio: calc(2/1);
+    --settings-toggle-background-off: #a0a0a0;
+    --settings-toggle-background-on: #1ed760;
+    --settings-toggle-background-active: #ff0080;
+}
+
+/* FONTS */
+@font-face {
+	font-family: 'Maiandra GD';
+	src: url(../Fonts/Maiandra-GD-Regular.ttf);
+}
+@font-face {
+	font-family: 'Jura';
+	src: url(../Fonts/Jura-Regular.ttf);
+}
+
+
+
+/* MAIN */
+body{
+    margin: var(--margin);
+    margin-bottom: 0;
+    overflow: hidden;
+}
+.theme-dark {
+    background: #000;
+}
+
+
+.header {
+    background: var(--header-background);
+    width: 100%;
+    height: var(--header-height);
+    margin-bottom: var(--margin);
+    border-radius: var(--border-radius);
+}
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--margin);
+}
+.title-image {
+    background: url(../Images/logo.png) no-repeat;
+    min-width: var(--header-height);
+    height: var(--header-height);
+    background-size: contain;
+    user-select: none;
+}
+.title-name {
+    font-family: 'Maiandra GD';
+    font-size: 60px;
+    background: var(--title-name-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+    max-height: var(--header-height);
+}
+
+.main {
+    width: 100%;
+    height: calc(100vh - var(--header-height) - var(--footer-height) - 3*var(--margin));
+    display: flex;
+    flex-direction: row;
+}
+.navbar {
+    width: var(--navbar-width);
+    height: 100%;
+    margin-right: var(--margin);
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+}
+.navbar-navigation {
+    width: 100%;
+    height: calc(100% - var(--navbar-width) - var(--margin));
+    border-radius: var(--border-radius);
+    background: var(--background-overlay);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    /* display: flex;
+    flex-direction: column; */
+    gap: var(--margin);
+    overflow-y: scroll;
+	-ms-overflow-style: none; /*hide scrollbar for IE, and Edge*/
+	scrollbar-width: none; /*hide scrollbar for Firefox*/
+}
+.navbar-navigation::-webkit-scrollbar {
+    display: none; /*hide scrollbar*/
+}
+.navbar-button {
+    width: var(--navbar-width);
+    height: var(--navbar-width);
+    margin-bottom: var(--margin);
+    border-radius: var(--border-radius);
+    /* background: #0f0; */
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: calc(nav);
+}
+.navbar-button-bottom {
+    /* margin-bottom: calc(100vh - 4* var(--margin) - 2*var(--navbar-width) - var(--header-height) - var(--footer-height)); */
+    margin-bottom: 0;
+}
+.navbar-button:hover {
+    background: rgba(255,255,255,0.2);
+}
+#home {
+    width: var(--navbar-icon-size);
+    height: var(--navbar-icon-size);
+    background-size: cover;
+}
+.home-light {
+    background: var(--icon-light-home);
+}
+.home-dark {
+    background: var(--icon-dark-home);
+}
+#bookmarks {
+    width: var(--navbar-icon-size);
+    height: var(--navbar-icon-size);
+    background-size: cover;
+}
+.bookmarks-light {
+    background: var(--icon-light-bookmarks);
+}
+.bookmarks-dark {
+    background: var(--icon-dark-bookmarks);
+}
+#projects {
+    width: var(--navbar-icon-size);
+    height: var(--navbar-icon-size);
+    background-size: cover;
+}
+.projects-light {
+    background: var(--icon-light-projects);
+}
+.projects-dark {
+    background: var(--icon-dark-projects);
+}
+#about-me {
+    width: var(--navbar-icon-size);
+    height: var(--navbar-icon-size);
+    background-size: cover;
+}
+.about-me-light {
+    background: var(--icon-light-about-me);
+}
+.about-me-dark {
+    background: var(--icon-dark-about-me);
+}
+.navbar-settings {
+    width: 100%;
+    height: var(--navbar-width);
+    border-radius: var(--border-radius);
+    background: var(--background-overlay);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+#settings {
+    width: var(--navbar-icon-size);
+    height: var(--navbar-icon-size);
+    background-size: cover;
+}
+.settings-light {
+    background: var(--icon-light-settings);
+}
+.settings-dark {
+    background: var(--icon-dark-settings);
+}
+.content {
+    width: calc(100vw - var(--navbar-width) - 3*var(--margin));
+    height: 100%;
+    border-radius: var(--border-radius);
+    background: var(--background-overlay);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+.content iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    background: var(--footer-background);
+    width: calc(100vw - 14px);
+    height: var(--footer-height);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Jura';
+    font-size: 0.9rem;
+    color: #fff;
+}
+#version-indicator {
+    position: absolute;
+    right: calc((var(--footer-height) - (0.9rem))/2);
+}
+#author-wrapper {
+    display: flex;
+    gap: 0.3rem;
+    padding-left: calc((var(--footer-height) - (0.9rem))/2);
+}
+
+
+
+/* SETTINGS POPUP */
+.settings-popup {
+    position: absolute;
+    width: var(--settings-popup-width);
+    height: var(--settings-popup-height);
+    left: calc((var(--navbar-width) + 2*var(--margin)) + (100vw - var(--navbar-width) - 3*var(--margin))/2 - var(--settings-popup-width)/2);
+    top: calc(var(--header-height) + 2*var(--margin) + (100vh - var(--header-height) - var(--footer-height) - 3*var(--margin))/2 - var(--settings-popup-height)/2);
+    border-radius: var(--border-radius);
+    background: var(--settings-popup-background);
+    backdrop-filter: var(--settings-popup-backdrop-filter); /* blur effect */
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--settings-popup-shadow-effect);
+    color: #fff;
+}
+.settings-popup-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: calc(2*var(--margin));
+    margin-top: var(--margin);
+    width: calc(100% - 4*var(--margin));
+    height: 1.5rem;
+    font-family: 'Jura';
+    font-size: 1.5rem;
+    border-radius: var(--border-radius);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: var(--settings-popup-backdrop-filter); /* blur effect */
+}
+.settings-popup-settings {
+    padding-top: var(--margin);
+    padding-left: var(--margin);
+    margin-left: var(--margin);
+    width: calc(100% - 3*var(--margin));
+    height: 100%;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+}
+.setting {
+    width: calc(var(--settings-popup-width) - 4*var(--margin) - 20px);
+    padding: 10px;
+    background: rgba();
+    backdrop-filter: blur(10px); /* blur effect */
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: var(--settings-popup-backdrop-filter); /* blur effect */
+    border-radius: var(--border-radius);
+}
+.setting-title {
+    font-family: 'Jura';
+}
+.setting-content {
+    display: flex;
+    flex-direction: row;
+    margin-left: var(--margin);
+    align-items: center;
+    gap: var(--margin);
+}
+.setting-content-item {
+    font-family: 'Jura';
+    font-size: 1rem;
+}
+.setting-number-range {
+    min-width: 135px;
+    cursor: pointer;
+}
+.setting-checkbox {
+    display: none;
+}
+.setting-checkbox-label {
+    background: var(--settings-toggle-background-off);
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.25), inset 0px -5px 15px rgba(255,255,255,0.25);
+    width: var(--settings-toggle-size);
+    height: calc(var(--settings-toggle-size)/var(--settings-toggle-aspect-ratio));
+    border-radius: var(--settings-toggle-size);
+    cursor: pointer;
+    transition: 150ms;
+}
+.setting-checkbox-label::before {
+    position: absolute;
+    content: '';
+    background: #fff;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    width: calc(.8*var(--settings-toggle-size)/var(--settings-toggle-aspect-ratio));
+    height: calc(.8*var(--settings-toggle-size)/var(--settings-toggle-aspect-ratio));
+    border-radius: var(--settings-toggle-size);
+    margin: calc(.1*var(--settings-toggle-size)/var(--settings-toggle-aspect-ratio));
+    transition: 150ms;
+}
+.setting-checkbox:checked + .setting-checkbox-label {
+    background: var(--settings-toggle-background-on);
+}
+.setting-checkbox:checked + .setting-checkbox-label::before {
+    transform: translateX(calc(var(--settings-toggle-size) - var(--settings-toggle-size)/var(--settings-toggle-aspect-ratio)));
+}
+.setting-checkbox-label:active {
+    background: var(--settings-toggle-background-active);
+}
+.setting-checkbox:checked + .setting-checkbox-label:active {
+    background: var(--settings-toggle-background-active);
+}
+.setting-dropdown {
+    width: auto;
+    height: 25px;
+    cursor: pointer;
+    border-radius :5px;
+    border: none;
+}
+.setting-color-picker {
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+
+
+/* BACKGROUND IMAGE */
+.main-background {
+    z-index: -1;
+    position: absolute;
+    width: calc(100vw - 2*var(--margin));
+    height: calc(100vh - var(--header-height) - var(--footer-height) - 3*var(--margin));
+    top: calc(var(--header-height) + 2*var(--margin));
+    display: flex;
+    flex-direction: row;
+}
+.navbar-background {
+    width: var(--navbar-width);
+    height: 100%;
+    margin-right: var(--margin);
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin);
+}
+.navbar-navigation-background {
+    width: 100%;
+    height: calc(100% - var(--navbar-width) - var(--margin));
+    border-radius: var(--border-radius);
+    background: var(--background);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+.navbar-settings-background {
+    width: 100%;
+    height: var(--navbar-width);
+    border-radius: var(--border-radius);
+    background: var(--background);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}
+.content-background {
+    width: calc(100vw - var(--navbar-width) - 3*var(--margin));
+    height: 100%;
+    border-radius: var(--border-radius);
+    background: var(--background);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+}

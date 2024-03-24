@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kliko's Hub v6.0</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <script src="JavaScript/main.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            <div class="title-image"></div>
+            <div class="title-name">Kliko's Hub</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="navbar-navigation">
+                <div class="navbar-button" onclick="change_to_page('home')">
+                    <div id="home" class="navbar-icon");"></div>
+                </div>
+                <div class="navbar-button" onclick="change_to_page('bookmarks')">
+                    <div id="bookmarks" class="navbar-icon"></div>
+                </div>
+                <div class="navbar-button" onclick="change_to_page('projects')">
+                    <div id="projects" class="navbar-icon"></div>
+                </div>
+                <div class="navbar-button navbar-button-bottom" onclick="change_to_page('about me')">
+                    <div id="about-me" class="navbar-icon"></div>
+                </div>
+            </div>
+            <div class="navbar-settings">
+                <div class="navbar-button" onclick="open_close_settings()">
+                    <div id="settings" class="navbar-icon"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="settings-popup" style="display: none;">
+                <div class="settings-popup-title">Settings Menu</div>
+                <div class="settings-popup-settings">
+                    <div class="setting">
+                        <div class="setting-title">Dark mode</div>
+                        <div class="setting-content">
+                            <input id="darkmode-toggle" type="checkbox" class="setting-checkbox" onclick="darkmode_toggle()">
+                            <label for="darkmode-toggle" class="setting-checkbox-label"></label>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="setting-title">Background image</div>
+                        <div class="setting-content">
+                            <div class="image-seletor">
+                                <select id="background-image-selector" class="setting-dropdown" onchange="change_background_image()" oninput="change_background_image_preview()">
+                                    <option value="none">none (default)</option>
+                                    <option value="'Images/background/saber.jpg'">saber.jpg</option>
+                                    <option value="'Images/background/edgerunners.jpg'">edgerunners.jpg</option>
+                                    <option value="'Images/background/klein.jpg'">klein.jpg</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <div class="setting-title">Background overlay</div>
+                        <div class="setting-content">
+                            <div class="setting-content-item">color:</div>
+                            <input type="color" value="default" id="overlay-color-selector" class="setting-content-item setting-color-picker" onchange="change_overlay_color()" oninput="change_overlay_color_preview()">
+                            <div class="setting-content-item">opacity:</div>
+                            <input type="range" value="default" id="overlay-opacity-selector" class="setting-content-item setting-number-range" onchange="change_overlay_opacity()" oninput="change_overlay_opacity_preview()">
+                            <div id="overlay-opacity-indicator" class="setting-content-item">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <iframe src="HTML/home.html" frameborder="0"></iframe>
+        </div>
+    </div>
+    
+    <div class="main-background">
+        <div class="navbar-background">
+            <div class="navbar-navigation-background"></div>
+            <div class="navbar-settings-background"></div>
+        </div>
+        <div class="content-background"></div>
+    </div>
+
+    <div class="footer">
+        <div id="version-indicator">Version 6.0.13</div>
+        <div id="author-wrapper">
+            <div>made by: </div>
+            <div id="author">TheKliko</div>
+        </div>
+    </div>
+</body>
+</html>
