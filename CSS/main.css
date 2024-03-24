@@ -264,6 +264,7 @@ body{
     flex-direction: column;
     box-shadow: var(--settings-popup-shadow-effect);
     color: #fff;
+    user-select: none;
 }
 .settings-popup-title {
     display: flex;
