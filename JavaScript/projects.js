@@ -15,12 +15,12 @@ window.onload = function setup() {
     }
 
     // images
-    var image_html_hub = "/Images/Projects/HTML/Kliko's Hub.png";
+    var image_html_hub = "/Images/projects/HTML/Kliko's Hub.png";
 
-    var image_mod_kliko = "/Images/Projects/Roblox mods/Kliko's mod.png";
-    var image_mod_2015UI = "/Images/Projects/Roblox mods/2015 UI.png";
-    var image_mod_bloxstrap = "/Images/Projects/Roblox mods/bloxstrap theme.png";
-    var image_mod_synthwave = "/Images/Projects/Roblox mods/synthwave theme.png";
+    var image_mod_kliko = "/Images/projects/Roblox mods/Kliko's mod.png";
+    var image_mod_2015UI = "/Images/projects/Roblox mods/2015 UI.png";
+    var image_mod_bloxstrap = "/Images/projects/Roblox mods/bloxstrap theme.png";
+    var image_mod_synthwave = "/Images/projects/Roblox mods/synthwave theme.png";
 
     document.getElementById('klikos-hub-v6').src = image_html_hub;
     document.getElementById('klikos-hub-v5').src = image_html_hub;
