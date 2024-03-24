@@ -1,12 +1,12 @@
 title = 'Kliko\'s Hub';
 author = 'TheKliko';
-defined_pages = ['home', 'bookmarks', 'projects', 'about me'];
 
 const isHexColor = color => /^#([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color);
 
 window.onload = function setup() {
     var body = document.body;
     var iframe = document.getElementsByTagName('iframe')[0];
+    var title = document.getElementsByTagName('title')[0];
 
     var content_background = document.getElementsByClassName('content-background')[0];
     var navbar_top_background = document.getElementsByClassName('navbar-navigation-background')[0];
@@ -55,6 +55,7 @@ window.onload = function setup() {
     if (page == 'about me') {
         document.getElementById('about-me').classList.add('about-me-selected');
     }
+    title.innerHTML = 'Kliko\'s Hub | '+ capitalizeFirstLetter(page);
 
     // Setting theme
     if (theme == 'light') {
@@ -134,8 +135,13 @@ function hexToRgb(hex) {
     } : null;
 }
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function change_to_page(page) {
     var iframe = document.getElementsByTagName('iframe')[0];
+    var title = document.getElementsByTagName('title')[0];
     var path = 'HTML/'+page+'.html';
     iframe.src = path
     var addedClasslist = page+'-selected';
@@ -150,6 +156,7 @@ function change_to_page(page) {
     else {
         document.getElementById(page).classList.add(addedClasslist);
     }
+    title.innerHTML = 'Kliko\'s Hub | '+ capitalizeFirstLetter(page);
     localStorage.setItem('page', page)
 }
 

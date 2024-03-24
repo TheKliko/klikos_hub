@@ -18,13 +18,18 @@
 /* MAIN */
 body{
     margin: 0;
-    color: #fff;
+    color: #000;
+    overflow-x: hidden;
     overflow-y: scroll;
 	-ms-overflow-style: none; /*hide scrollbar for IE, and Edge*/
 	scrollbar-width: none; /*hide scrollbar for Firefox*/
+    user-select: none;
 }
 ::-webkit-scrollbar {
     display: none; /*hide scrollbar*/
+}
+body.dark {
+    color: #fff;
 }
 
 .content {

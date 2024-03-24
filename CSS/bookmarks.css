@@ -9,10 +9,6 @@
     --bookmark-container-shadow-effect: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     --bookmark-container-content-background: rgba(0,0,0,0.01);
 
-    --bookmark-color: ;
-    --bookmark-color-hover: ;
-    --bookmark-color-active: #ff0080;
-
 	--bookmark-color: #00ff7f;
 	--bookmark-color-hover: #009999;
 	--bookmark-color-active: #ff0080;
@@ -33,7 +29,7 @@
 /* MAIN */
 body{
     margin: 0;
-    color: #fff;
+    color: #000;
     overflow-x: hidden;
     overflow-y: scroll;
 	-ms-overflow-style: none; /*hide scrollbar for IE, and Edge*/
@@ -42,6 +38,9 @@ body{
 }
 ::-webkit-scrollbar {
     display: none; /*hide scrollbar*/
+}
+body.dark {
+    color: #fff;
 }
 
 .content {
@@ -58,7 +57,6 @@ body{
 .bookmarks-area {
     padding: var(--page-padding);
     margin-left: calc(-1 * var(--page-padding));
-    /* background: #f00; */
     position: absolute;
     width: calc(100vw - 2*var(--page-padding));
     height: calc(100vh - 3*var(--page-padding) - var(--page-title-font-size) - var(--margin));
