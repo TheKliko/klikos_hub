@@ -30,12 +30,10 @@ body{
 .content {
     position: absolute;
     padding: 24px;
+    font-family: 'Jura';
 }
 .page-title {
     font-family: 'Maiandra GD';
     font-size: 2rem;
     font-weight: bold;
-}
-.content h1 {
-    font-family: 'Maiandra GD';
 }
