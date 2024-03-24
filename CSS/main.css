@@ -28,6 +28,17 @@
     --icon-dark-about-me: url('../Images/icons/dark/info.png');
     --icon-dark-settings: url('../Images/icons/dark/settings.png');
 
+    --icon-light-selected-home: url('../Images/icons/light/selected/home.png');
+    --icon-light-selected-bookmarks: url('../Images/icons/light/selected/bookmarks.png');
+    --icon-light-selected-projects: url('../Images/icons/light/selected/projects.png');
+    --icon-light-selected-about-me: url('../Images/icons/light/selected/info.png');
+    --icon-light-selected-settings: url('../Images/icons/light/selected/settings.png');
+    --icon-dark-selected-home: url('../Images/icons/dark/selected/home.png');
+    --icon-dark-selected-bookmarks: url('../Images/icons/dark/selected/bookmarks.png');
+    --icon-dark-selected-projects: url('../Images/icons/dark/selected/projects.png');
+    --icon-dark-selected-about-me: url('../Images/icons/dark/selected/info.png');
+    --icon-dark-selected-settings: url('../Images/icons/dark/selected/settings.png');
+
     --settings-popup-width: 400px;
     --settings-popup-height: 500px;
     --settings-popup-shadow-effect: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -153,8 +164,14 @@ body{
 .home-light {
     background: var(--icon-light-home);
 }
+.home-light.home-selected {
+    background: var(--icon-light-selected-home);
+}
 .home-dark {
     background: var(--icon-dark-home);
+}
+.home-dark.home-selected {
+    background: var(--icon-dark-selected-home);
 }
 #bookmarks {
     width: var(--navbar-icon-size);
@@ -164,8 +181,14 @@ body{
 .bookmarks-light {
     background: var(--icon-light-bookmarks);
 }
+.bookmarks-light.bookmarks-selected {
+    background: var(--icon-light-selected-bookmarks);
+}
 .bookmarks-dark {
     background: var(--icon-dark-bookmarks);
+}
+.bookmarks-dark.bookmarks-selected {
+    background: var(--icon-dark-selected-bookmarks);
 }
 #projects {
     width: var(--navbar-icon-size);
@@ -175,8 +198,14 @@ body{
 .projects-light {
     background: var(--icon-light-projects);
 }
+.projects-light.projects-selected {
+    background: var(--icon-light-selected-projects);
+}
 .projects-dark {
     background: var(--icon-dark-projects);
+}
+.projects-dark.projects-selected {
+    background: var(--icon-dark-selected-projects);
 }
 #about-me {
     width: var(--navbar-icon-size);
@@ -186,8 +215,14 @@ body{
 .about-me-light {
     background: var(--icon-light-about-me);
 }
+.about-me-light.about-me-selected {
+    background: var(--icon-light-selected-about-me);
+}
 .about-me-dark {
     background: var(--icon-dark-about-me);
+}
+.about-me-dark.about-me-selected {
+    background: var(--icon-dark-selected-about-me);
 }
 .navbar-settings {
     width: 100%;

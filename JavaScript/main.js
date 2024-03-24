@@ -4,19 +4,6 @@ defined_pages = ['home', 'bookmarks', 'projects', 'about me'];
 
 const isHexColor = color => /^#([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color);
 
-// home_icon_light=  url('Images/icons/home.png');
-// bookmarks_icon_light = url('Images/icons/light/bookmarks.png');
-// projects_icon_light = url('Images/icons/light/projects.png');
-// about_me_icon_light =  url('Images/icons/light/info.png');
-// settings_icon_light = url('Concepts/icons/light/settings.jpg');
-
-// home_icon_dark=  url('Images/icons/dark/home.png');
-// bookmarks_icon_dark = url('Images/icons/dark/bookmarks.png');
-// projects_icon_dark = url('Images/icons/dark/projects.png');
-// about_me_icon_dark =  url('Images/icons/dark/info.png');
-// settings_icon_dark = url('Concepts/icons/dark/settings.jpg');
-
-
 window.onload = function setup() {
     var body = document.body;
     var iframe = document.getElementsByTagName('iframe')[0];
@@ -44,17 +31,30 @@ window.onload = function setup() {
     var background_overlay_color = localStorage.getItem('background_overlay_color');
     var background_overlay_opacity = localStorage.getItem('background_overlay_opacity');
 
-    if (page in defined_pages) {
+    if ('page' in localStorage) {
         var path = 'HTML/'+page+'.html';
     }
     else {
-        var path = 'HTML/home.html';
+        var page = 'home'
+        var path = 'HTML/'+page+'.html';
     }
 
 
     // Setting iframe source
     iframe.src = path;
     console.log(title + ' loaded on page: ' + page);
+    if (page == 'home') {
+        document.getElementById('home').classList.add('home-selected');
+    }
+    if (page == 'bookmarks') {
+        document.getElementById('bookmarks').classList.add('bookmarks-selected');
+    }
+    if (page == 'projects') {
+        document.getElementById('projects').classList.add('projects-selected');
+    }
+    if (page == 'about me') {
+        document.getElementById('about-me').classList.add('about-me-selected');
+    }
 
     // Setting theme
     if (theme == 'light') {
@@ -138,6 +138,18 @@ function change_to_page(page) {
     var iframe = document.getElementsByTagName('iframe')[0];
     var path = 'HTML/'+page+'.html';
     iframe.src = path
+    var addedClasslist = page+'-selected';
+    // document.getElementsByClassName(page+'-selected').classList.remove(page+'-selected');
+    document.getElementById('home').classList.remove('home-selected');
+    document.getElementById('bookmarks').classList.remove('bookmarks-selected');
+    document.getElementById('projects').classList.remove('projects-selected');
+    document.getElementById('about-me').classList.remove('about-me-selected');
+    if (page == 'about me') {
+        document.getElementById('about-me').classList.add('about-me-selected');
+    }
+    else {
+        document.getElementById(page).classList.add(addedClasslist);
+    }
     localStorage.setItem('page', page)
 }
 
