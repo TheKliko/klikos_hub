@@ -12,11 +12,9 @@
     --navbar-icon-size: 24px;
     --border-radius: 5px;
     --footer-height: 40px;
-    --background: url('../Images/background/saber.jpg');
     --background: #fff;
     --background-overlay: rgba(0,0,0,0.65);
-    /* --background-overlay: #fff; */
-    --title-name-color: linear-gradient(0deg, #000, #666) no-repeat;
+    --title-name-color: linear-gradient(0deg, #000, #333) no-repeat;
 
 
     --icon-light-home: url('../Images/icons/light/home.png');
