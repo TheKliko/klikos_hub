@@ -241,11 +241,13 @@ body{
 #version-indicator {
     position: absolute;
     right: calc((var(--footer-height) - (0.9rem))/2);
+    user-select: none;
 }
 #author-wrapper {
     display: flex;
     gap: 0.3rem;
     padding-left: calc((var(--footer-height) - (0.9rem))/2);
+    user-select: none;
 }
 
 
