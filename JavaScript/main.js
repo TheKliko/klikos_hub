@@ -57,23 +57,23 @@ window.onload = function setup() {
     console.log(title + ' loaded on page: ' + page);
 
     // Setting theme
-    if (theme == 'dark') {
-        body.classList.add('theme-dark');
-        darkmode_toggle.checked = true;
-        document.getElementById('home').classList.add('home-dark');
-        document.getElementById('bookmarks').classList.add('bookmarks-dark');
-        document.getElementById('projects').classList.add('projects-dark');
-        document.getElementById('about-me').classList.add('about-me-dark');
-        document.getElementById('settings').classList.add('settings-dark');
-    }
-    else {      // theme == 'light'     (default theme)
-        localStorage.setItem('theme', 'light')
+    if (theme == 'light') {
         body.classList.add('theme-light');
         document.getElementById('home').classList.add('home-light');
         document.getElementById('bookmarks').classList.add('bookmarks-light');
         document.getElementById('projects').classList.add('projects-light');
         document.getElementById('about-me').classList.add('about-me-light');
         document.getElementById('settings').classList.add('settings-light');
+    }
+    else {      // theme == 'dark'     (default theme)
+        body.classList.add('theme-dark');
+        localStorage.setItem('theme', 'dark')
+        darkmode_toggle.checked = true;
+        document.getElementById('home').classList.add('home-dark');
+        document.getElementById('bookmarks').classList.add('bookmarks-dark');
+        document.getElementById('projects').classList.add('projects-dark');
+        document.getElementById('about-me').classList.add('about-me-dark');
+        document.getElementById('settings').classList.add('settings-dark');
     }
     console.log(title, 'loaded with theme:', theme)
 
@@ -90,7 +90,7 @@ window.onload = function setup() {
     // Background
     // Image
     if (selected_background_image == 'none') {
-        var style_background_image = ""
+        var style_background_image = "background: #000; background-size: cover; background-attachment: fixed; background-position: center center;";
     }
     else {
         var style_background_image = "background: url("+selected_background_image+"); background-size: cover; background-attachment: fixed; background-position: center center;";
@@ -181,7 +181,13 @@ function change_background_image_preview() {
     var content_background = document.getElementsByClassName('content-background')[0];
     var navbar_top_background = document.getElementsByClassName('navbar-navigation-background')[0];
     var navbar_bottom_background = document.getElementsByClassName('navbar-settings-background')[0];
-    var style_background_image = "background: url("+input+"); background-size: cover; background-attachment: fixed; background-position: center center;";
+
+    if (input == 'none') {
+        var style_background_image = "background: #000; background-size: cover; background-attachment: fixed; background-position: center center;";
+    }
+    else {
+        var style_background_image = "background: url("+input+"); background-size: cover; background-attachment: fixed; background-position: center center;";
+    }
     content_background.style=style_background_image;
     navbar_top_background.style=style_background_image;
     navbar_bottom_background.style=style_background_image;
