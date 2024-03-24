@@ -158,12 +158,13 @@ function open_close_settings() {
     var settings_state = localStorage.getItem('settings_state');
     if (settings_state == 'true') {
         localStorage.setItem('settings_state', 'false')
-        settings_popup.style = "display: none;"
+        settings_popup.style = "display: none;";
     }
     else {
         localStorage.setItem('settings_state', 'true')
         settings_popup.style = ""
     }
+    // window.location.reload();
 }
 
 function darkmode_toggle() {
