@@ -1,0 +1,39 @@
+/* VARIABLES */
+:root {
+    
+}
+
+/* FONTS */
+@font-face {
+	font-family: 'Maiandra GD';
+	src: url(../Fonts/Maiandra-GD-Regular.ttf);
+}
+@font-face {
+	font-family: 'Jura';
+	src: url(../Fonts/Jura-Regular.ttf);
+}
+
+
+
+/* MAIN */
+body{
+    margin: 0;
+    color: #fff;
+    overflow-y: scroll;
+	-ms-overflow-style: none; /*hide scrollbar for IE, and Edge*/
+	scrollbar-width: none; /*hide scrollbar for Firefox*/
+}
+::-webkit-scrollbar {
+    display: none; /*hide scrollbar*/
+}
+
+.content {
+    position: absolute;
+    padding: 24px;
+    font-family: 'Jura';
+}
+.page-title {
+    font-family: 'Maiandra GD';
+    font-size: 2rem;
+    font-weight: bold;
+}
