@@ -15,7 +15,11 @@ window.onload = function setup() {
     }
 
     // images
+    var image_html_generic = "../Images/projects/HTML/generic.png";
     var image_html_hub = "../Images/projects/HTML/Kliko's Hub.png";
+
+    var image_python_generic = "../Images/projects/Python/generic.png";
+    var image_python_modloader = "../Images/projects/Python/modloader.png";
 
     var image_mod_kliko = "../Images/projects/Roblox mods/Kliko's mod.png";
     var image_mod_2015UI = "../Images/projects/Roblox mods/2015 UI.png";
@@ -23,7 +27,11 @@ window.onload = function setup() {
     var image_mod_synthwave = "../Images/projects/Roblox mods/synthwave theme.png";
 
     document.getElementById('klikos-hub-v6').src = image_html_hub;
-    document.getElementById('klikos-hub-v5').src = image_html_hub;
+    document.getElementById('klikos-hub-v5').src = image_html_generic;
+
+    document.getElementById('modloader').src = image_python_modloader;
+    document.getElementById('skybox-generator').src = image_python_generic;
+    document.getElementById('textures-generator').src = image_python_generic;
 
     document.getElementById('Klikos-mod').src = image_mod_kliko;
     document.getElementById('2015-ui').src = image_mod_2015UI;

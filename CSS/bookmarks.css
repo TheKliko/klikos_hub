@@ -83,7 +83,6 @@ body.dark {
     box-shadow: var(--bookmark-container-shadow-effect);
 }
 .bookmark-container-title {
-    text-align: center;
     font-size: 1.3rem;
     font-weight: 600;
     background: var(--bookmark-container-content-background);
